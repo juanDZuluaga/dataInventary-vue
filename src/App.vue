@@ -8,7 +8,7 @@
   </h1>
 </template>
 
-<style scoped>
+ <style scoped>
 .logo {
   height: 6em;
   padding: 1.5em;
