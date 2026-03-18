@@ -16,7 +16,7 @@
  * ✅ No conocen Vue, Pinia, ni la API
  */
 
-import type { UserRepository } from '../../domain/ports/UserRepositiry';
+import type { UserRepository } from '../../domain/ports/UserRepository';
 import type { UserResponseDTO } from '../dtos/UserDTO';
 
 // ──────────────────────────────────────────────

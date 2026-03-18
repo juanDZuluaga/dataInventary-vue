@@ -20,24 +20,24 @@ import type { DocumentType, Sex } from '../../domain/entities/User';
  * Los nombres de campo coinciden exactamente con la base de datos (snake_case).
  */
 export interface UserApiResponse {
-  id: number;
-  first_name: string;
-  second_name?: string;
-  first_surname: string;
-  second_surname?: string;
-  type_document: string;
-  number_document: string;
+  id:                     number;
+  first_name:             string;
+  second_name?:           string;
+  first_surname:          string;
+  second_surname?:        string;
+  type_document:          string;
+  number_document:        string;
   document_issuance_date: string;  // La API devuelve fechas como string ISO
-  sex: string;
-  country: string;
-  email: string;
-  cell_phone: string;
-  city: string;
-  address: string;
-  birthdate: string;
-  is_active: boolean;
-  created_at: string;
-  updated_at: string;
+  sex:                    string;
+  country:                string;
+  email:                  string;
+  cell_phone:             string;
+  city:                   string;
+  address:                string;
+  birthdate:              string;
+  is_active:              boolean;
+  created_at:             string;
+  updated_at:             string;
   // password_hash NO se incluye por seguridad — nunca debe llegar al frontend
 }
 
@@ -54,25 +54,25 @@ export class UserApiMapper {
    */
   static toDomain(raw: UserApiResponse): User {
     return User.create({
-      id: raw.id,
-      firstName: raw.first_name,
-      secondName: raw.second_name,
-      firstSurname: raw.first_surname,
-      secondSurname: raw.second_surname,
-      typeDocument: raw.type_document as DocumentType,
-      numberDocument: raw.number_document,
+      id:                    raw.id,
+      firstName:             raw.first_name,
+      secondName:            raw.second_name,
+      firstSurname:          raw.first_surname,
+      secondSurname:         raw.second_surname,
+      typeDocument:          raw.type_document as DocumentType,
+      numberDocument:        raw.number_document,
       // Convertimos strings de fecha a objetos Date para que la entidad pueda calcular edad, etc.
-      documentIssuanceDate: new Date(raw.document_issuance_date),
-      sex: raw.sex as Sex,
-      country: raw.country,
-      email: raw.email,
-      cellPhone: raw.cell_phone,
-      city: raw.city,
-      address: raw.address,
-      birthdate: new Date(raw.birthdate),
-      isActive: raw.is_active,
-      createdAt: new Date(raw.created_at),
-      updatedAt: new Date(raw.updated_at),
+      documentIssuanceDate:  new Date(raw.document_issuance_date),
+      sex:                   raw.sex as Sex,
+      country:               raw.country,
+      email:                 raw.email,
+      cellPhone:             raw.cell_phone,
+      city:                  raw.city,
+      address:               raw.address,
+      birthdate:             new Date(raw.birthdate),
+      isActive:              raw.is_active,
+      createdAt:             new Date(raw.created_at),
+      updatedAt:             new Date(raw.updated_at),
     });
   }
 

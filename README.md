@@ -23,6 +23,9 @@ npm run dev
 ## Build
 npm run build
 
+## Pinia
+npm install pinia
+
 ## conecciones a manejo de rutas
 npm install express
 npm install -D @types/express
