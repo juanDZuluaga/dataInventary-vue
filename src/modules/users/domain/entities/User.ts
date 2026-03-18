@@ -67,30 +67,30 @@ export class User {
    * @param props - Los datos del usuario
    * @returns Una nueva instancia de User
    */
-static create(props: UserProps): User {
-    return new User(props);
-}
+  static create(props: UserProps): User {
+      return new User(props);
+  }
 
-// ── GETTERS: Acceso controlado a los datos ──
+  // ── GETTERS: Acceso controlado a los datos ──
 
-get id():                       number { return this.props.id; }
-get firstName():                string { return this.props.firstName; }
-get secondName():               string | undefined { return this.props.secondName; }
-get firstSurname():             string { return this.props.firstSurname; }
-get secondSurname():            string | undefined { return this.props.secondSurname; }
-get typeDocument():             DocumentType { return this.props.typeDocument; }
-get numberDocument():           string { return this.props.numberDocument; }
-get documentIssuanceDate():     Date { return this.props.documentIssuanceDate; }
-get sex():                      Sex { return this.props.sex; }
-get country():                  string { return this.props.country; }
-get email():                    string { return this.props.email; }
-get cellPhone():                string { return this.props.cellPhone; }
-get city():                     string { return this.props.city; }
-get address():                  string { return this.props.address; }
-get birthdate():                Date { return this.props.birthdate; }
-get isActive():                 boolean { return this.props.isActive; }
-get createdAt():                Date { return this.props.createdAt; }
-get updatedAt():                Date { return this.props.updatedAt; }
+  get id():                       number { return this.props.id; }
+  get firstName():                string { return this.props.firstName; }
+  get secondName():               string | undefined { return this.props.secondName; }
+  get firstSurname():             string { return this.props.firstSurname; }
+  get secondSurname():            string | undefined { return this.props.secondSurname; }
+  get typeDocument():             DocumentType { return this.props.typeDocument; }
+  get numberDocument():           string { return this.props.numberDocument; }
+  get documentIssuanceDate():     Date { return this.props.documentIssuanceDate; }
+  get sex():                      Sex { return this.props.sex; }
+  get country():                  string { return this.props.country; }
+  get email():                    string { return this.props.email; }
+  get cellPhone():                string { return this.props.cellPhone; }
+  get city():                     string { return this.props.city; }
+  get address():                  string { return this.props.address; }
+  get birthdate():                Date { return this.props.birthdate; }
+  get isActive():                 boolean { return this.props.isActive; }
+  get createdAt():                Date { return this.props.createdAt; }
+  get updatedAt():                Date { return this.props.updatedAt; }
 
   // ── LÓGICA DE NEGOCIO ───────────────────────
 
@@ -119,10 +119,7 @@ get updatedAt():                Date { return this.props.updatedAt; }
     let age = today.getFullYear() - birth.getFullYear();
 
     // Ajustamos si todavía no ha cumplido años este año
-    const hasHadBirthdayThisYear =
-      today.getMonth() > birth.getMonth() ||
-      (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
-
+    const hasHadBirthdayThisYear = today.getMonth() > birth.getMonth() || (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
     if (!hasHadBirthdayThisYear) age--;
 
     return age;

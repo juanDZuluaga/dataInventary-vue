@@ -28,7 +28,7 @@ export interface UserResponseDTO {
   numberDocument:       string;
   documentIssuanceDate: string;     // Fechas como string para la UI
   sex:                  string;
-  sexLabel:             string;     // "Masculino" o "Femenino"
+  sexLabel:            string;     // "Masculino" o "Femenio"
   country:              string;
   email:                string;
   cellPhone:            string;

@@ -34,35 +34,30 @@ import type { User } from '../../domain/entities/User';
 
 function toDTO(user: User): UserResponseDTO {
   // Formateador de fechas: convierte Date a string legible "DD/MM/YYYY"
-  const formatDate = (date: Date): string =>
-    date.toLocaleDateString('es-CO', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
+  const formatDate = (date: Date): string => date.toLocaleDateString('es-CO', { day: '2-digit', month: '2-digit', year: 'numeric', });
 
   return {
-    id: user.id,
-    firstName: user.firstName,
-    secondName: user.secondName,
-    firstSurname: user.firstSurname,
-    secondSurname: user.secondSurname,
-    fullName: user.fullName,           // Propiedad calculada de la entidad
-    age: user.age,                     // Propiedad calculada de la entidad
-    typeDocument: user.typeDocument,
-    numberDocument: user.numberDocument,
-    documentIssuanceDate: formatDate(user.documentIssuanceDate),
-    sex: user.sex,
-    sexLabel: user.sexLabel,           // Propiedad calculada de la entidad
-    country: user.country,
-    email: user.email,
-    cellPhone: user.cellPhone,
-    city: user.city,
-    address: user.address,
-    birthdate: formatDate(user.birthdate),
-    isActive: user.isActive,
-    createdAt: formatDate(user.createdAt),
-    updatedAt: formatDate(user.updatedAt),
+    id:                     user.id,
+    firstName:              user.firstName,
+    secondName:             user.secondName,
+    firstSurname:           user.firstSurname,
+    secondSurname:          user.secondSurname,
+    fullName:               user.fullName,           // Propiedad calculada de la entidad
+    age:                    user.age,                     // Propiedad calculada de la entidad
+    typeDocument:           user.typeDocument,
+    numberDocument:         user.numberDocument,
+    documentIssuanceDate:   formatDate(user.documentIssuanceDate),
+    sex:                    user.sex,
+    sexLabel:               user.sexLabel,           // Propiedad calculada de la entidad
+    country:                user.country,
+    email:                  user.email,
+    cellPhone:              user.cellPhone,
+    city:                   user.city,
+    address:                user.address,
+    birthdate:              formatDate(user.birthdate),
+    isActive:               user.isActive,
+    createdAt:              formatDate(user.createdAt),
+    updatedAt:              formatDate(user.updatedAt),
   };
 }
 
@@ -84,11 +79,7 @@ export class GetAllUsersUseCase {
    * La clase no sabe si el repositorio llama a una API real
    * o devuelve datos mock — no le importa, solo le importa el contrato.
    */
-    private readonly userRepository: UserRepository;
-
-    constructor(userRepository: UserRepository) {
-        this.userRepository = userRepository;
-    }
+    constructor(private readonly userRepository: UserRepository) {}
 
   /**
    * Ejecuta el caso de uso.
@@ -114,6 +105,7 @@ export class GetAllUsersUseCase {
  * Lanza un error si el usuario no existe (regla de negocio).
  */
 export class GetUserByIdUseCase {
+  
   constructor(private readonly userRepository: UserRepository) {}
 
   /**
