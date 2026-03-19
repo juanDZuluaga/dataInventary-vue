@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold text-green-500">
-    Data Inventory
-  </h1>
+  <RouterView />
 </template>
 
  <style scoped>

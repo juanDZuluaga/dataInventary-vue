@@ -30,6 +30,9 @@ npm install pinia
 npm install express
 npm install -D @types/express
 
+## routes
+npm install vue-router@4
+
 
 ## Dependencias
 - npx tailwindcss init -p
