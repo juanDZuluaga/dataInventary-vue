@@ -78,8 +78,8 @@ function handleGoBack(): void {
             Gestión de Usuarios
             </h1>
             <p class="text-gray-500 mt-1">
-            {{ userStore.totalUsers }} usuario(s) registrado(s)
-            — {{ userStore.activeUsers.length }} activo(s)
+            {{ userStore.totalUsers }} usuario registrado
+            — {{ userStore.activeUsers.length }} activo
             </p>
         </header>
 
